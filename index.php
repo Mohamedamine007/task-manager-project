@@ -97,6 +97,9 @@
       $result = mysqli_query($conn, $query);
 
       if($result) {
+
+        if(mysqli_num_rows($result) > 0) {
+          
         $sn = 1;
         while($row = mysqli_fetch_assoc($result)) {
           $task_id = $row['task_id'];
@@ -125,6 +128,7 @@
           <td colspan="5">No Task Added Yet</td>
         </tr>
         <?php
+      }
       }
       ?>
     </table>
